@@ -1,0 +1,31 @@
+{
+    "name": "sys25/permanent-promo-code",
+    "description": "Reactivate individual promotion codes",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "René Nitzsche"
+        }
+    ],
+    "require": {
+        "shopware/core": "^6.3.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Sys25\\PermanentPromoCode\\Sys25PermanentPromoCode",
+        "label": {
+            "de-DE": "Permanent promotion codes",
+            "en-GB": "Permanent promotion codes"
+        },
+        "description": {
+            "de-DE": "Reaktiviert individuelle Gutscheincodes nach dem Kauf.",
+            "en-GB": "Reactivate individual promotion codes after checkout."
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sys25\\PermanentPromoCode\\": "src/"
+        }
+    }
+}

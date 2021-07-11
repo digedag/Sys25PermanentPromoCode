@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    Sys25\PermanentPromoCode\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Entity,Tests}'
+
+    Sys25\PermanentPromoCode\EventListener\PromoCodeSubscriber:
+        class:  'Sys25\PermanentPromoCode\EventListener\PromoCodeSubscriber'
+        arguments:
+           - '@promotion_individual_code.repository'
+        tags:
+            - { name: kernel.event_subscriber, event: prePersist, priority: -200 }
